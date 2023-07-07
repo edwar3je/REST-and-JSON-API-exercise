@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{%  block title %}Homepage{% endblock %} 
+
+{% block content %} 
+<h1>Here's our cupcakes</h1>
+<ul class="cupcake-list"></ul>
+<h2>Add more cupcakes</h2>
+<!--action="/api/cupcakes" method="post"--->
+<form>
+    <label>Flavor     </label><input type="text" class="flavor-form" name="flavor"><br>
+    <label>Size     </label><select name="size" class="size-form">
+        <option value="small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="large">Large</option>
+    </select><br>
+    <label>Rating    </label><input type="number" class="rating-form" name="rating" min="0" max="10" step="0.1"><br>
+    <label>Image URL (optional)    </label><input type="text" class="image-form" name="image"><br>
+    <button class="add-cupcake">Add Cupcake</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+<script src="static/script.js"></script>
+{% endblock %} 
